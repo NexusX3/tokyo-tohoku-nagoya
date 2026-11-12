@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>東京・東北・名古屋 跨年 15 日</title>
+<meta name="description" content="12/21–1/4 東京聖誕市集、富士河口湖、仙台、銀山溫泉、藏王樹冰，到名古屋跨年與初詣的 15 天行程。">
+<meta property="og:title" content="東京・東北・名古屋 跨年 15 日">
+<meta property="og:description" content="聖誕市集、富士山、銀山溫泉、藏王樹冰、名古屋跨年初詣。">
+<style>
+:root{
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","PingFang TC","Helvetica Neue","Microsoft JhengHei",sans-serif;
+  --paper:#f6f1e7; --card:#fffdf8; --ink:#1d2433; --muted:#5d6577; --line:#e3dacb;
+  --indigo:#1f3a5f; --gold:#b8892b; --gold-soft:#f3e6c4; --sea:#2f6f86; --warn:#9a3b1f; --warn-soft:#f8e3d8;
+  --shadow:0 1px 2px rgba(29,36,51,.06),0 8px 24px rgba(29,36,51,.06);
+}
+:root[lang="ja"]{
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Hiragino Sans","Hiragino Kaku Gothic ProN","Helvetica Neue","Meiryo",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#11151d; --card:#171c26; --ink:#e9e4da; --muted:#a3abba; --line:#2a3140;
+    --indigo:#9fbbe0; --gold:#e0b55a; --gold-soft:#2e2717; --sea:#7fc1d6; --warn:#f0a58a; --warn-soft:#33221b;
+    --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#11151d; --card:#171c26; --ink:#e9e4da; --muted:#a3abba; --line:#2a3140;
+  --indigo:#9fbbe0; --gold:#e0b55a; --gold-soft:#2e2717; --sea:#7fc1d6; --warn:#f0a58a; --warn-soft:#33221b;
+  --shadow:none;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.75 var(--font);-webkit-font-smoothing:antialiased}
+a{color:var(--sea)}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px}
+h1,h2,h3{font-family:var(--font);line-height:1.3;margin:0}
+
+/* language switch */
+.lang{position:fixed;top:12px;right:12px;z-index:20;display:flex;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:3px;box-shadow:var(--shadow)}
+.lang button{font:600 13px/1 var(--font);color:var(--muted);background:transparent;border:0;border-radius:999px;padding:8px 12px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--indigo);color:var(--paper)}
+
+/* hero */
+header.hero{padding:56px 0 32px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:13px;letter-spacing:.2em;color:var(--gold);font-weight:700}
+.hero h1{font-size:clamp(34px,8vw,56px);font-weight:900;margin:8px 0 12px;color:var(--indigo)}
+.hero h1 span{color:var(--gold)}
+.hero p.lede{color:var(--muted);margin:0;max-width:36em}
+.stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 14px;font-size:14px}
+.stat b{color:var(--indigo)}
+
+/* route map */
+.map{margin:28px 0 8px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px;box-shadow:var(--shadow)}
+.map svg{width:100%;height:auto;display:block}
+.map svg text{font-family:var(--font)}
+.map figcaption{font-size:13px;color:var(--muted);padding:4px 6px 2px}
+
+/* nav */
+nav.days{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav.days .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:10px;padding-bottom:10px}
+nav.days a{flex:none;text-decoration:none;color:var(--ink);font-size:14px;padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:var(--card)}
+nav.days a:hover{border-color:var(--gold)}
+
+section{padding:40px 0 8px;scroll-margin-top:56px}
+.sec-title{font-size:13px;letter-spacing:.2em;color:var(--gold);font-weight:700;margin-bottom:6px}
+
+/* day */
+.day-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.day-no{font-weight:900;font-size:44px;color:var(--gold);line-height:1}
+.day-head h2{font-size:clamp(22px,5vw,28px);color:var(--indigo)}
+.drive{color:var(--muted);font-size:14px;margin:4px 0 18px}
+.stay{display:inline-block;background:var(--gold-soft);color:var(--ink);border-radius:6px;padding:2px 10px;font-size:14px;margin-left:4px}
+
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tl::before{content:"";position:absolute;left:58px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl li{position:relative;display:grid;grid-template-columns:52px 1fr;gap:20px;padding:0 0 18px}
+.tl time{font-variant-numeric:tabular-nums;font-size:14px;font-weight:700;color:var(--indigo);text-align:right;padding-top:14px}
+.tl li::after{content:"";position:absolute;left:53px;top:20px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:3px solid var(--gold)}
+.tl li.move::after{border-color:var(--sea);background:var(--sea);width:8px;height:8px;left:55px;top:22px}
+.stop{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;box-shadow:var(--shadow)}
+.tl li.move time{padding-top:10px}
+.tl li.move .stop{background:transparent;border:1px dashed var(--line);box-shadow:none;color:var(--muted);font-size:15px;padding:8px 14px}
+.tl li.move .stop strong{color:var(--ink)}
+.stop h3{font-size:18px;display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.stop p{margin:6px 0 0;font-size:15px}
+.tag{font-size:12px;font-weight:500;padding:1px 8px;border-radius:999px;background:var(--gold-soft);color:var(--ink)}
+.tag.opt{background:transparent;border:1px solid var(--line);color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:8px;font-size:13px;color:var(--muted)}
+.meta a{text-decoration:none;font-weight:500}
+.daytip{margin-left:72px}
+.tip{margin-top:8px;font-size:14px;background:var(--gold-soft);border-radius:8px;padding:6px 10px}
+
+/* variant */
+.variant{margin:4px 0 0 72px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--sea);border-radius:12px;padding:12px 16px}
+.variant h3{font-size:17px;color:var(--sea);margin-bottom:6px}
+.variant ol{margin:0;padding-left:20px;font-size:15px}
+.variant ol li{margin:2px 0}
+.variant p{margin:8px 0 0;font-size:14px;color:var(--muted)}
+
+/* notes */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:14px}
+.note{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.note h3{font-size:16px;color:var(--indigo);margin-bottom:4px}
+.note p,.note ul{margin:0;font-size:15px;color:var(--ink)}
+.note ul{padding-left:18px}
+.note.key{background:var(--gold-soft);border-color:transparent}
+
+footer{padding:40px 0 56px;color:var(--muted);font-size:13px;border-top:1px solid var(--line);margin-top:40px}
+@media (max-width:480px){
+  .tl::before{left:46px}
+  .tl li{grid-template-columns:40px 1fr;gap:18px}
+  .tl li::after{left:41px}
+  .tl li.move::after{left:43px}
+  .tl time{font-size:13px}
+  .variant,.daytip{margin-left:0}
+}
+@media print{nav.days,.lang{display:none}.stop,.note,.map{box-shadow:none}}
+</style>
+</head>
+<body>
+
+<div class="lang" role="group" aria-label="Language">
+  <button type="button" data-lang="zh" aria-pressed="true">中文</button>
+  <button type="button" data-lang="ja" aria-pressed="false">日本語</button>
+</div>
+
+<div id="app"></div>
+
+<script>
+const L = (o) => (o && typeof o === 'object' && 'zh' in o) ? o[lang] : o;
+const gmap = (q) => 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(q);
+
+const UI = {
+  title: {zh:'東京・東北・名古屋 跨年 15 日', ja:'東京・東北・名古屋 年越し15日間'},
+  desc: {zh:'12/21–1/4 東京聖誕市集、富士河口湖、仙台、銀山溫泉、藏王樹冰，到名古屋跨年與初詣的 15 天行程。',
+         ja:'12/21〜1/4、東京のクリスマスマーケット、富士河口湖、仙台、銀山温泉、蔵王の樹氷、名古屋での年越し・初詣を巡る15日間。'},
+  eyebrow: 'TOKYO · TOHOKU · NAGOYA · 15 DAYS',
+  h1: {zh:['東京・東北・<br>','名古屋跨年'], ja:['東京・東北・<br>','名古屋で年越し']},
+  lede: {zh:'聖誕節在東京逛市集、去迪士尼；接著到河口湖看富士山，北上仙台、山形泡銀山溫泉、看藏王樹冰，最後飛到名古屋敲鐘跨年、初詣，再從名古屋回台北。',
+         ja:'クリスマスは東京でマーケットとディズニー。河口湖で富士山を眺めたあと、仙台・山形へ北上して銀山温泉と蔵王の樹氷へ。最後は名古屋へ飛んで年越しと初詣、名古屋から台北へ帰ります。'},
+  stats: [
+    {zh:'日期 <b>12/21–1/4</b> 15 天 14 夜', ja:'日程 <b>12/21〜1/4</b> 14泊15日'},
+    {zh:'住宿 <b>東京・河口湖・仙台・山形・名古屋</b>', ja:'宿泊 <b>東京・河口湖・仙台・山形・名古屋</b>'},
+    {zh:'交通 <b>新幹線＋巴士＋國內線</b>', ja:'交通 <b>新幹線＋バス＋国内線</b>'}
+  ],
+  mapCap: {zh:'路線示意圖（非實際比例）', ja:'ルート概略図（縮尺は実際と異なります）'},
+  notesNav: {zh:'須知', ja:'ガイド'},
+  mapLink: {zh:'📍 地圖', ja:'📍 地図'},
+  notesEyebrow: {zh:'出發前', ja:'出発前に'},
+  notesTitle: {zh:'出發前須知', ja:'出発前のチェック'},
+  footer: {zh:'資料於 2026 年 11 月查詢。JR 每年 3 月中改點，年末年始常有臨時班次；銀山溫泉冬季巴士、藏王樹冰點燈等 2026–27 冬季資訊部分尚未公布，標示「約」或「出發前確認」的時間請再用 Google Maps 或「乗換案内」核對。營業時間、票價可能異動。',
+           ja:'情報は2026年11月時点で調べたものです。JRは毎年3月中旬にダイヤ改正があり、年末年始は臨時列車も運行されます。銀山温泉の冬季バスや蔵王の樹氷ライトアップなど2026〜27年冬の情報は一部未発表です。「約」「要確認」の時刻は、出発前に乗換案内などでご確認ください。営業時間・料金は変更になる場合があります。'}
+};
+
+const DAYS = [
+ { id:'d1221', no:'12/21', nav:{zh:'12/21 抵達',ja:'12/21 到着'},
+   title:{zh:'台北 → 東京｜芝公園聖誕市集', ja:'台北 → 東京｜芝公園クリスマスマーケット'},
+   route:{zh:'✈️ 10:10–14:20 台北 → 東京；🚆 機場 → 錦糸町飯店', ja:'✈️ 10:10–14:20 台北 → 東京、🚆 空港 → 錦糸町のホテル'},
+   stay:{zh:'住 東京（錦糸町）', ja:'東京（錦糸町）泊'},
+   items:[
+    {t:'14:20', move:true, p:{zh:'抵達東京。成田機場可搭 <strong>JR 總武線快速</strong>直達錦糸町（約 1 小時 20 分）；羽田機場則搭京急＋都營淺草線（約 1 小時）。',
+                              ja:'東京着。成田空港からは<strong>JR総武快速線</strong>で錦糸町まで乗り換えなし（約1時間20分）、羽田空港からは京急＋都営浅草線で約1時間。'}},
+    {t:'16:30', move:true, p:{zh:'飯店 check-in，稍微休息。', ja:'ホテルにチェックイン、ひと休み。'}},
+    {t:'17:30', h:{zh:'晚餐',ja:'夕食'}, tag:{zh:'晚餐',ja:'夕食'},
+     p:{zh:'錦糸町站周邊吃完再出發，或直接到市集吃德國香腸、熱紅酒當晚餐。',
+        ja:'錦糸町駅周辺で食べてから出発するか、マーケットでソーセージやグリューワインを夕食代わりに。'}, meta:[], q:'錦糸町駅'},
+    {t:'18:30', h:{zh:'東京聖誕市集 in 芝公園',ja:'東京クリスマスマーケット in 芝公園'}, tag:{zh:'要買票',ja:'チケット制'},
+     p:{zh:'芝公園會場就在東京鐵塔腳下（東京鐵塔聖誕市集指的就是這裡），14 公尺高的聖誕金字塔配上鐵塔夜景。錦糸町搭都營新宿線＋三田線到御成門站（A6 出口步行 1 分），約 30 分鐘。逛完走 10 分鐘到東京鐵塔正下方拍照。',
+        ja:'「芝公園」と「東京タワー」のクリスマスマーケットは同じ会場です。東京タワーのふもとに高さ約14mのクリスマスピラミッドが立ちます。錦糸町から都営新宿線＋三田線で御成門駅（A6出口から徒歩1分）、約30分。帰りに東京タワーの真下まで歩いて約10分。'},
+     meta:[{zh:'⏰ 11:00–22:00（最後入場 21:00）',ja:'⏰ 11:00–22:00（最終入場21:00）'},{zh:'💴 平日大人 1,000 円（12/24・25 為 2,000 円）',ja:'💴 平日大人1,000円（12/24・25は2,000円）'}], q:'東京クリスマスマーケット 芝公園',
+     tip:{zh:'🎟️ 在 KKday 買事前預約票會送會場限定馬克杯（芝公園是紅色款），人多時現場票可能限制入場。',
+          ja:'🎟️ KKdayの事前予約チケットは会場限定マグカップ付き（芝公園は赤）。混雑時は当日券の入場が制限されることも。'}}
+   ]
+ },
+ { id:'d1222', no:'12/22', nav:{zh:'12/22 迪士尼',ja:'12/22 ディズニー'},
+   title:{zh:'東京迪士尼樂園', ja:'東京ディズニーランド'},
+   route:{zh:'🚆 錦糸町 → 舞濱，約 40 分鐘（東京站或新木場轉京葉線）', ja:'🚆 錦糸町 → 舞浜、約40分（東京駅または新木場で京葉線に乗り換え）'},
+   stay:{zh:'住 東京（錦糸町）', ja:'東京（錦糸町）泊'},
+   items:[
+    {t:'11:00', move:true, p:{zh:'出門。', ja:'出発。'}},
+    {t:'11:30', h:{zh:'午餐',ja:'昼食'}, tag:{zh:'午餐',ja:'昼食'},
+     p:{zh:'在錦糸町吃完再過去；或到舞濱站旁的 Ikspiari 吃，入園後就能專心玩。',
+        ja:'錦糸町で食べてから向かうか、舞浜駅前のイクスピアリで食べてから入園。'}, meta:[], q:'イクスピアリ'},
+    {t:'13:00', h:{zh:'東京迪士尼樂園',ja:'東京ディズニーランド'}, tag:{zh:'必去',ja:'メイン'},
+     p:{zh:'聖誕活動到 12/25，城堡投影與夜間遊行是重點。下午入園人多，進場後先用 App 抽 Priority Pass、買 DPA。',
+        ja:'クリスマスイベントは12/25まで。キャッスルのプロジェクションと夜のパレードは必見。午後入園なので、入ったらすぐアプリでプライオリティパスやDPAを確保。'},
+     meta:[{zh:'🎟️ 門票依日期浮動，要先在官網／App 買',ja:'🎟️ 日付指定・変動価格。公式サイト／アプリで事前購入'}], q:'東京ディズニーランド'}
+   ]
+ },
+ { id:'d1223', no:'12/23', nav:{zh:'12/23 橫濱',ja:'12/23 横浜'},
+   title:{zh:'橫濱｜中華街・紅磚倉庫・港灣夜景', ja:'横浜｜中華街・赤レンガ倉庫・港の夜景'},
+   route:{zh:'🚆 錦糸町搭 JR 總武快速／橫須賀線直達橫濱，約 50 分鐘', ja:'🚆 錦糸町からJR総武快速・横須賀線で横浜まで直通、約50分'},
+   stay:{zh:'住 東京（錦糸町）', ja:'東京（錦糸町）泊'},
+   items:[
+    {t:'11:00', move:true, p:{zh:'錦糸町出發 → 橫濱，轉港未來線到「元町・中華街」站。', ja:'錦糸町 → 横浜、みなとみらい線で「元町・中華街」駅へ。'}},
+    {t:'12:00', h:{zh:'橫濱中華街',ja:'横浜中華街'}, tag:{zh:'午餐',ja:'昼食'},
+     p:{zh:'吃小籠包、煎包、北京烤鴨，邊走邊吃。走到關帝廟、媽祖廟看看。',
+        ja:'小籠包や焼き小籠包、北京ダックを食べ歩き。関帝廟・媽祖廟にも立ち寄り。'}, meta:[], q:'横浜中華街'},
+    {t:'14:00', h:{zh:'山下公園 → 大棧橋',ja:'山下公園 → 大さん橋'}, tag:{zh:'散步',ja:'散策'},
+     p:{zh:'沿海邊散步到大棧橋屋頂，看港未來天際線。',
+        ja:'海沿いを歩いて大さん橋の屋上へ。みなとみらいのスカイラインを一望。'}, meta:[], q:'大さん橋 横浜'},
+    {t:'15:30', h:{zh:'橫濱紅磚倉庫聖誕市集',ja:'Christmas Market in 横浜赤レンガ倉庫'}, tag:{zh:'聖誕',ja:'クリスマス'},
+     p:{zh:'約 60 家攤位、11 公尺高的生木聖誕樹，今年熱門是白色熱紅酒。天黑後整區點燈最漂亮。',
+        ja:'約60店舗と高さ約11mの生木ツリー。今年は「ホワイトグリューワイン」が注目。日が暮れてからのライトアップがきれいです。'},
+     meta:[{zh:'📅 至 12/25',ja:'📅 12/25まで'},{zh:'💴 入場 500 円起',ja:'💴 入場500円〜'}], q:'横浜赤レンガ倉庫'},
+    {t:'17:00', h:{zh:'ヨルノヨ 港灣燈光秀',ja:'ヨルノヨ'}, tag:{zh:'夜景',ja:'夜景'},
+     p:{zh:'港未來一帶的大型燈光活動，免費。12/25 前每整點與半點有 5 分鐘的「Highlight of Yokohama」燈光秀，在紅磚倉庫或大棧橋看最清楚。晚餐在港未來解決後直接搭 JR 回錦糸町。',
+        ja:'横浜都心臨海部の大型イルミネーション（無料）。12/25までは毎時00分・30分に5分間の「ハイライト・オブ・ヨコハマ」。赤レンガ倉庫や大さん橋から見やすいです。夕食はみなとみらいで、JRで錦糸町へ直帰。'},
+     meta:[{zh:'⏰ 17:00–21:05',ja:'⏰ 17:00–21:05'}], q:'みなとみらい'}
+   ]
+ },
+ { id:'d1224', no:'12/24', nav:{zh:'12/24 招財貓',ja:'12/24 招き猫'},
+   title:{zh:'豪德寺招財貓 → 麻布台 → 六本木｜平安夜', ja:'豪徳寺の招き猫 → 麻布台 → 六本木｜イブ'},
+   route:{zh:'🚆 錦糸町 → 豪德寺（新宿轉小田急）約 50 分；回程搭日比谷線到神谷町', ja:'🚆 錦糸町 → 豪徳寺（新宿で小田急に乗り換え）約50分、帰りは日比谷線で神谷町へ'},
+   stay:{zh:'住 東京（錦糸町）', ja:'東京（錦糸町）泊'},
+   items:[
+    {t:'11:30', move:true, p:{zh:'出門，往小田急「豪德寺」站（或世田谷線「宮之坂」站）。', ja:'出発、小田急「豪徳寺」駅（または世田谷線「宮の坂」駅）へ。'}},
+    {t:'12:30', h:{zh:'豪德寺',ja:'豪徳寺'}, tag:{zh:'招財貓',ja:'招き猫'},
+     p:{zh:'招財貓發祥地之一，奉納所排滿上千隻白色招財貓。寺務所可請一隻帶回家（依大小 300–5,000 円）。附近商店街吃午餐。',
+        ja:'招き猫発祥の地のひとつ。奉納所には千体以上の招き猫が並びます。寺務所で招き猫を授かれます（大きさにより300〜5,000円）。昼食は近くの商店街で。'},
+     meta:[{zh:'⏰ 寺務所 9:00–16:30',ja:'⏰ 寺務所 9:00–16:30'}], q:'豪徳寺'},
+    {t:'15:00', h:{zh:'麻布台 Hills 聖誕市集',ja:'麻布台ヒルズ クリスマスマーケット'}, tag:{zh:'聖誕',ja:'クリスマス'},
+     p:{zh:'日比谷線「神谷町」站直結。中央廣場有 19 家攤位，飲食選擇比六本木多，德國聖誕用品店 Käthe Wohlfahrt 也在這裡。',
+        ja:'日比谷線「神谷町」駅直結。中央広場に19店舗、飲食は六本木より充実。ドイツのクリスマス雑貨店ケーテ・ウォルファルトも出店。'},
+     meta:[{zh:'⏰ 11:00–21:00（至 12/25）',ja:'⏰ 11:00–21:00（12/25まで）'},{zh:'💴 免費入場',ja:'💴 入場無料'}], q:'麻布台ヒルズ 中央広場'},
+    {t:'17:00', h:{zh:'六本木 Hills',ja:'六本木ヒルズ'}, tag:{zh:'夜景',ja:'夜景'},
+     p:{zh:'從麻布台步行約 15 分鐘。大屋根廣場的聖誕市集今年第 20 屆；天黑後到櫸樹坂，白藍色燈海盡頭就是東京鐵塔。時間夠可以上 52 樓「東京 City View」看夜景。',
+        ja:'麻布台から徒歩約15分。大屋根プラザのクリスマスマーケットは今年20回目。暗くなったら、けやき坂イルミネーションの先に東京タワー。余裕があれば52階「東京シティビュー」へ。'},
+     meta:[{zh:'⏰ 市集 11:00–21:00（至 12/25）',ja:'⏰ マーケット 11:00–21:00（12/25まで）'}], q:'六本木ヒルズ けやき坂',
+     tip:{zh:'💡 平安夜三處都很擠，晚餐建議提早訂位或在市集吃。',ja:'💡 イブはどこも大混雑。夕食は予約するかマーケットで。'}}
+   ]
+ },
+ { id:'d1225', no:'12/25', nav:{zh:'12/25 富士山',ja:'12/25 富士山'},
+   title:{zh:'東京 → 富士山｜新倉山淺間公園', ja:'東京 → 富士山｜新倉山浅間公園'},
+   route:{zh:'🚌 新宿 → 富士山站 高速巴士約 1 小時 45 分', ja:'🚌 新宿 → 富士山駅 高速バス約1時間45分'},
+   stay:{zh:'住 河口湖', ja:'河口湖泊'},
+   items:[
+    {t:'10:00', move:true, p:{zh:'退房。', ja:'チェックアウト。'}},
+    {t:'10:19', move:true, p:{zh:'錦糸町搭 JR 總武線到新宿（約 25 分鐘），走到南口的「Busta 新宿」。', ja:'錦糸町からJR総武線で新宿へ（約25分）、南口の「バスタ新宿」へ。'}},
+    {t:'10:55', move:true, p:{zh:'<strong>高速巴士</strong>新宿 → 富士山站（10:55 或 11:15 班），約 1 小時 45 分。特急「富士回遊」早上最後一班是 10:30 發，這個時間只能搭巴士。座位要先在網路預約。',
+                              ja:'<strong>高速バス</strong>で新宿 → 富士山駅（10:55または11:15発）、約1時間45分。特急「富士回遊」は午前の最終が10:30発なので、この時間はバスで。座席は事前にネット予約を。'}},
+    {t:'12:45', move:true, p:{zh:'抵達富士山站，取車（依你的租車預約）或把行李寄在站內置物櫃。', ja:'富士山駅着。予約したレンタカーを受け取るか、荷物を駅のコインロッカーへ。'}},
+    {t:'13:00', h:{zh:'新倉富士淺間神社（新倉山淺間公園）',ja:'新倉富士浅間神社（新倉山浅間公園）'}, tag:{zh:'必去',ja:'必見'},
+     p:{zh:'爬 398 階到展望台，五重塔＋富士山的經典構圖。下午是逆光，富士山會偏暗，但冬天空氣乾淨、雪頂很清楚。開車有停車場；搭車則從下吉田站步行約 10 分鐘。',
+        ja:'398段の階段を上って展望デッキへ。五重塔と富士山の定番の構図。午後は逆光気味ですが、冬は空気が澄んで雪化粧がくっきり。車は駐車場あり、電車なら下吉田駅から徒歩約10分。'},
+     meta:[{zh:'💴 免費',ja:'💴 無料'}], q:'新倉山浅間公園'},
+    {t:'15:30', move:true, p:{zh:'前往河口湖飯店 check-in，傍晚看湖邊的富士山。', ja:'河口湖のホテルへ移動してチェックイン。夕方は湖畔から富士山を。'}}
+   ]
+ },
+ { id:'d1226', no:'12/26', nav:{zh:'12/26 河口湖',ja:'12/26 河口湖'},
+   title:{zh:'河口湖一日｜大石公園・纜車・狸貓糰子', ja:'河口湖めぐり｜大石公園・ロープウェイ・たぬき団子'},
+   route:{zh:'🚗 自駕環湖，13:30 還車後步行', ja:'🚗 湖畔をドライブ、13:30返却後は徒歩'},
+   stay:{zh:'住 河口湖', ja:'河口湖泊'},
+   items:[
+    {t:'07:00', move:true, p:{zh:'飯店早餐（07:00–09:00）。', ja:'ホテルで朝食（07:00–09:00）。'}},
+    {t:'11:00', move:true, p:{zh:'出門。', ja:'出発。'}},
+    {t:'11:30', h:{zh:'河口湖大橋',ja:'河口湖大橋'}, tag:{zh:'拍照',ja:'撮影'},
+     p:{zh:'開車過橋時湖面與富士山在同一個畫面，橋北岸有停車點可以拍。',
+        ja:'橋の上からは湖と富士山がひとつの画面に。北岸に車を停めて撮影できます。'}, meta:[], q:'河口湖大橋'},
+    {t:'12:00', h:{zh:'大石公園・河口湖自然生活館',ja:'大石公園・河口湖自然生活館'}, tag:{zh:'伴手禮',ja:'お土産'},
+     p:{zh:'湖岸正對富士山的公園，冬天沒有花但視野最開闊。生活館買藍莓果醬、名產，順便吃藍莓霜淇淋。',
+        ja:'湖越しに富士山を正面から望む公園。冬は花がないぶん視界が開けます。自然生活館でブルーベリージャムなどのお土産を。'},
+     meta:[{zh:'⚠️ 營業時間出發前確認',ja:'⚠️ 営業時間は要確認'}], q:'河口湖自然生活館'},
+    {t:'12:45', h:{zh:'Lake Bake 咖啡麵包',ja:'Lake Bake（カフェ・パン）'}, tag:{zh:'午餐',ja:'昼食'},
+     p:{zh:'湖邊的麵包咖啡店，買麵包配咖啡當午餐。',
+        ja:'湖畔のベーカリーカフェ。パンとコーヒーで軽いランチ。'},
+     meta:[{zh:'⚠️ 營業時間、公休日出發前確認',ja:'⚠️ 営業時間・定休日は要確認'}], q:'Lake Bake 河口湖'},
+    {t:'13:30', move:true, p:{zh:'<strong>還車</strong>，行李寄放（飯店或還車處），之後步行。', ja:'<strong>レンタカー返却</strong>、荷物を預けて徒歩で移動。'}},
+    {t:'14:00', h:{zh:'天上山公園（富士山全景纜車）',ja:'天上山公園（富士山パノラマロープウェイ）'}, tag:{zh:'絕景',ja:'絶景'},
+     p:{zh:'纜車 3 分鐘上山，山頂展望台正面就是富士山與河口湖。「狸貓茶屋」的烤狸貓糰子是名物，茶屋屋頂也是展望台。年末年始人多，下午可能要排隊。',
+        ja:'ロープウェイで約3分。山頂の展望台からは富士山と河口湖を正面に。「たぬき茶屋」の名物たぬき団子をぜひ。茶屋の屋上も展望台です。年末年始は混雑し、午後は待ち時間が出ることも。'},
+     meta:[{zh:'⏰ 12–2 月 9:30–16:30（下山末班 16:50）',ja:'⏰ 12〜2月 9:30–16:30（下り最終16:50）'}], q:'富士山パノラマロープウェイ'}
+   ]
+ },
+ { id:'d1227', no:'12/27', nav:{zh:'12/27 仙台',ja:'12/27 仙台'},
+   title:{zh:'富士山 → 仙台｜真鯛拉麵・光之盛典', ja:'富士山 → 仙台｜真鯛ラーメンと光のページェント'},
+   route:{zh:'🚆 富士急 → 大月 → JR 中央線 → 東京 → 東北新幹線，約 4 小時 30 分', ja:'🚆 富士急 → 大月 → JR中央線 → 東京 → 東北新幹線、約4時間30分'},
+   stay:{zh:'住 仙台', ja:'仙台泊'},
+   items:[
+    {t:'07:00', move:true, p:{zh:'飯店早餐，吃完就退房。', ja:'ホテルで朝食、食べたらチェックアウト。'}},
+    {t:'09:08', move:true, p:{zh:'富士山站搭富士急行線普通車往<strong>大月</strong>（約 1 小時）。注意：「富士回遊」上行最早要到 14:16 才有，早上回東京只能這樣轉。',
+                              ja:'富士山駅から富士急行線の普通列車で<strong>大月</strong>へ（約1時間）。上りの「富士回遊」は14:16発が最初なので、午前はこのルートで。'}},
+    {t:'10:10', move:true, p:{zh:'大月轉 <strong>JR 中央線</strong>（特急或中央特快）到新宿／東京，約 1 小時 15 分。', ja:'大月で<strong>JR中央線</strong>（特急または中央特快）に乗り換え、新宿／東京へ約1時間15分。'}},
+    {t:'11:40', move:true, p:{zh:'東京站搭<strong>東北新幹線</strong>（はやぶさ／やまびこ）到仙台，約 1 小時 30 分，13:30 前後抵達。', ja:'東京駅から<strong>東北新幹線</strong>（はやぶさ／やまびこ）で仙台へ約1時間30分、13:30頃着。'}},
+    {t:'14:00', h:{zh:'週末麺処 らくら ひとしな',ja:'週末麺処 らくら ひとしな'}, tag:{zh:'拉麵',ja:'ラーメン'},
+     p:{zh:'和食店週末限定的真鯛清湯拉麵，只有 8 個座位，湯賣完就收。仙台站西口步行約 10 分鐘，脫鞋入座。',
+        ja:'和食店が週末だけ営業する真鯛清湯ラーメン。わずか8席で、スープがなくなり次第終了。仙台駅西口から徒歩約10分、靴を脱いで上がります。'},
+     meta:[{zh:'⏰ 週末 10:00–16:00（賣完為止）',ja:'⏰ 週末 10:00–16:00（売り切れ次第終了）'},{zh:'⚠️ 12/28（一）沒開',ja:'⚠️ 12/28（月）は営業なし'}], q:'週末麺処 らくら ひとしな',
+     tip:{zh:'⏳ 湯常在下午前賣完，所以安排早一點出發；若搭 10:39 那班，約 15:00 才到仙台，可能吃不到。',
+          ja:'⏳ 午後には売り切れることが多いので早めの出発に。10:39発だと仙台着は15:00頃で、間に合わない可能性があります。'}},
+    {t:'15:30', move:true, p:{zh:'飯店 check-in。', ja:'ホテルにチェックイン。'}},
+    {t:'18:00', h:{zh:'SENDAI 光之盛典',ja:'SENDAI光のページェント'}, tag:{zh:'可選',ja:'寄り道'}, opt:true,
+     p:{zh:'定禪寺通的櫸樹大道掛滿 LED，像一條光的隧道。2026 年預定 12/4–12/27，今天剛好是最後一天。地下鐵「勾當台公園」站下車即到。',
+        ja:'定禅寺通のケヤキ並木を無数のLEDが彩る光のトンネル。2026年は12/4〜12/27の予定で、ちょうど最終日。地下鉄「勾当台公園」駅すぐ。'},
+     meta:[{zh:'⏰ 去年週日 18:00–21:00，今年時間出發前確認',ja:'⏰ 昨年の日曜は18:00–21:00、今年は要確認'}], q:'定禅寺通'}
+   ]
+ },
+ { id:'d1228', no:'12/28', nav:{zh:'12/28 仙台',ja:'12/28 仙台'},
+   title:{zh:'仙台｜朝市・大崎八幡宮', ja:'仙台｜朝市・大崎八幡宮'},
+   route:{zh:'🚶 市區步行＋巴士', ja:'🚶 市内を徒歩＋バスで'},
+   stay:{zh:'住 仙台', ja:'仙台泊'},
+   items:[
+    {t:'12:00', move:true, p:{zh:'出門。', ja:'出発。'}},
+    {t:'12:15', h:{zh:'仙台朝市',ja:'仙台朝市'}, tag:{zh:'午餐',ja:'昼食'},
+     p:{zh:'仙台站西口步行 5 分鐘的「仙台的廚房」，年底採買年菜最熱鬧。吃海鮮丼、名物可樂餅邊走邊吃。12/28 是週一，有開（週日、國定假日休）。',
+        ja:'仙台駅西口から徒歩5分の「仙台の台所」。年末は正月の買い出しでにぎわいます。海鮮丼や名物コロッケを。12/28は月曜で営業（日曜・祝日休み）。'},
+     meta:[{zh:'⏰ 約 8:00–17:00（依店家）',ja:'⏰ 8:00–17:00頃（店舗により異なる）'}], q:'仙台朝市'},
+    {t:'13:30', h:{zh:'大崎八幡宮',ja:'大崎八幡宮'}, tag:{zh:'參拜',ja:'参拝'},
+     p:{zh:'伊達政宗建造的國寶社殿，黑漆配金色裝飾，桃山風格。從仙台站搭市巴士或觀光循環巴士「Loople 仙台」約 20 分鐘。',
+        ja:'伊達政宗が造営した国宝の社殿。黒漆に金の装飾が映える桃山様式。仙台駅から市営バスまたは「るーぷる仙台」で約20分。'},
+     meta:[{zh:'💴 免費參拜',ja:'💴 参拝無料'}], q:'大崎八幡宮'},
+    {t:'15:30', h:{zh:'一番町・中央通商店街',ja:'一番町・クリスロード商店街'}, tag:{zh:'可選',ja:'寄り道'}, opt:true,
+     p:{zh:'回市區逛有屋頂的商店街，買萩之月、毛豆泥麻糬（ずんだ）當伴手禮。',
+        ja:'市中心のアーケード街でショッピング。萩の月やずんだ餅をお土産に。'}, meta:[], q:'クリスロード商店街'},
+    {t:'19:00', h:{zh:'晚餐：牛舌',ja:'夕食：牛たん'}, tag:{zh:'晚餐',ja:'夕食'},
+     p:{zh:'仙台必吃炭烤牛舌定食。吃完早點回飯店，明天要早起。',
+        ja:'仙台名物の炭焼き牛たん定食。翌日に備えて早めに休みましょう。'}, meta:[], q:'仙台駅 牛たん通り'}
+   ]
+ },
+ { id:'d1229', no:'12/29', nav:{zh:'12/29 銀山溫泉',ja:'12/29 銀山温泉'},
+   title:{zh:'仙台 → 山形 → 銀山溫泉', ja:'仙台 → 山形 → 銀山温泉'},
+   route:{zh:'🚆 仙山線 → 山形新幹線つばさ → 🚌 はながさ巴士', ja:'🚆 仙山線 → 山形新幹線つばさ → 🚌 はながさバス'},
+   stay:{zh:'住 山形', ja:'山形泊'},
+   items:[
+    {t:'10:00', move:true, p:{zh:'退房，搭 <strong>JR 仙山線</strong>到山形（約 1 小時 20 分）。', ja:'チェックアウト、<strong>JR仙山線</strong>で山形へ（約1時間20分）。'}},
+    {t:'11:30', move:true, p:{zh:'山形站附近的飯店寄放行李。', ja:'山形駅近くのホテルに荷物を預ける。'}},
+    {t:'11:50', h:{zh:'山形站午餐',ja:'山形駅でランチ'}, tag:{zh:'午餐',ja:'昼食'},
+     p:{zh:'站內 S-PAL 吃冷肉蕎麥麵等，來不及就買超商。',
+        ja:'駅ビル「エスパル」で冷たい肉そばなど。時間がなければコンビニで。'}, meta:[], q:'エスパル山形'},
+    {t:'12:45', move:true, p:{zh:'山形站搭<strong>山形新幹線 つばさ</strong>，<strong>13:17</strong> 抵達大石田。', ja:'山形駅から<strong>山形新幹線つばさ</strong>で、<strong>13:17</strong>大石田着。'}},
+    {t:'13:20', move:true, p:{zh:'站前超商買點東西，去排巴士（冬天很多人，早點排）。<strong>はながさ巴士只收現金 1,000 円</strong>，不能用 IC 卡。', ja:'駅前のコンビニで買い物をしてバス停へ（冬は混むので早めに並ぶ）。<strong>はながさバスは現金のみ 1,000円</strong>、ICカード不可。'}},
+    {t:'14:10', move:true, p:{zh:'大石田站 → 銀山溫泉（經母袋），約 14:53 抵達。', ja:'大石田駅 → 銀山温泉（母袋経由）、14:53頃着。'}},
+    {t:'15:00', h:{zh:'銀山溫泉',ja:'銀山温泉'}, tag:{zh:'必去',ja:'必見'},
+     p:{zh:'大正浪漫木造旅館夾著銀山川，雪景配上黃昏後亮起的煤氣燈最美（冬天 16:30 左右天就黑）。走到溫泉街盡頭的白銀瀑布，吃名物咖哩麵包、泡足湯「和樂足湯」。',
+        ja:'銀山川をはさんで大正ロマンの木造旅館が並ぶ温泉街。夕暮れにガス灯がともる雪景色が一番の見どころ（冬は16:30頃には暗くなります）。奥の白銀の滝まで歩き、名物カリーパンや足湯「和楽足湯」も。'},
+     meta:[{zh:'❄️ 路面結冰，穿防滑雪靴',ja:'❄️ 路面凍結、滑りにくい靴で'}], q:'銀山温泉'},
+    {t:'18:21', move:true, p:{zh:'<strong>末班巴士 18:21</strong>（快速）銀山溫泉 → 大石田，18:57 抵達。回程也很擠，提早排隊。12/31–1/3 這班停駛，12/29 有開。', ja:'<strong>最終バス 18:21発</strong>（快速）銀山温泉 → 大石田、18:57着。帰りも混むので早めに並びましょう。12/31〜1/3は運休ですが、12/29は運行。'}},
+    {t:'19:36', move:true, p:{zh:'大石田 → 山形（19:36 班，出發前用乗換案内確認）。18:58 的つばさ只差 1 分鐘接不上；19:36 搭不到的話，下一班是 <strong>20:12 つばさ</strong>，約 20:45 到山形。', ja:'大石田 → 山形（19:36発、出発前に乗換案内で確認を）。18:58発のつばさはバス到着の1分後で乗り継げません。19:36発に乗れない場合は<strong>20:12発のつばさ</strong>で、山形着は20:45頃。'}},
+    {t:'20:30', h:{zh:'晚餐',ja:'夕食'}, tag:{zh:'晚餐',ja:'夕食'},
+     p:{zh:'山形站周邊的居酒屋（芋煮、山形牛），年底不少店提早打烊，備案是超商。也可以在銀山溫泉先吃點東西墊胃。',
+        ja:'山形駅周辺の居酒屋で芋煮や山形牛を。年末は早じまいの店もあるので、コンビニも視野に。銀山温泉で軽く腹ごしらえしておくのも手。'}, meta:[], q:'山形駅 居酒屋'}
+   ]
+ },
+ { id:'d1230', no:'12/30', nav:{zh:'12/30 藏王',ja:'12/30 蔵王'},
+   title:{zh:'藏王樹冰・藏王溫泉街', ja:'蔵王の樹氷・蔵王温泉街'},
+   route:{zh:'🚌 山形站 → 藏王溫泉 巴士約 40 分鐘', ja:'🚌 山形駅 → 蔵王温泉 バス約40分'},
+   stay:{zh:'住 山形', ja:'山形泊'},
+   items:[
+    {t:'11:00', move:true, p:{zh:'出門。', ja:'出発。'}},
+    {t:'11:30', h:{zh:'午餐',ja:'昼食'}, tag:{zh:'午餐',ja:'昼食'},
+     p:{zh:'山形站周邊吃完再上山，或到藏王溫泉吃成吉思汗烤羊肉。',
+        ja:'山形駅周辺で食べてから向かうか、蔵王温泉でジンギスカンを。'}, meta:[], q:'山形駅'},
+    {t:'12:30', move:true, p:{zh:'山形站前搭巴士到「藏王溫泉巴士總站」，再走約 10 分鐘到藏王纜車山麓站。', ja:'山形駅前からバスで「蔵王温泉バスターミナル」へ、蔵王ロープウェイ山麓駅まで徒歩約10分。'}},
+    {t:'13:30', h:{zh:'藏王樹冰（藏王纜車）',ja:'蔵王の樹氷（蔵王ロープウェイ）'}, tag:{zh:'絕景',ja:'絶景'},
+     p:{zh:'山麓線轉山頂線到地藏山頂站（標高 1,661 m），被雪包住的冷杉群就是「雪怪」。12 月底樹冰還在長，形狀沒 1–2 月那麼大，看天氣決定；山頂零下十幾度，風大時纜車可能停駛。',
+        ja:'山麓線から山頂線を乗り継いで地蔵山頂駅（標高1,661m）へ。雪と氷をまとったアオモリトドマツ＝「スノーモンスター」。12月末はまだ成長途中で、1〜2月ほど大きくはありません。山頂は氷点下10℃以下、強風時は運休もあります。'},
+     meta:[{zh:'💴 往返大人 4,400 円（上季價格）',ja:'💴 往復大人4,400円（前シーズン）'}], q:'蔵王ロープウェイ 蔵王山麓駅',
+     tip:{zh:'🌙 上一季樹冰夜間點燈 12/27 開始，年末每天都有（17:00–21:00）。2026–27 日程還沒公布，若 12/30 有點燈可留到晚上，記得先查回山形的末班巴士。',
+          ja:'🌙 前シーズンの樹氷ライトアップは12/27開始、年末年始は毎日実施（17:00–21:00）。2026〜27年は未発表。12/30に実施されるなら夜まで残るのもおすすめ。山形行き最終バスを事前に確認。'}},
+    {t:'16:00', h:{zh:'藏王溫泉街',ja:'蔵王温泉街'}, tag:{zh:'泡湯',ja:'温泉'},
+     p:{zh:'強酸性硫磺泉，白濁帶硫磺味。可泡共同浴場或付費日歸溫泉，街上有免費足湯。',
+        ja:'強酸性の硫黄泉で、白濁した湯。共同浴場や日帰り入浴、無料の足湯も。'}, meta:[], q:'蔵王温泉'}
+   ]
+ },
+ { id:'d1231', no:'12/31', nav:{zh:'12/31 名古屋',ja:'12/31 名古屋'},
+   title:{zh:'山形 → 名古屋｜大須跨年', ja:'山形 → 名古屋｜大須で年越し'},
+   route:{zh:'✈️ FDA 山形 12:25 → 名古屋（小牧）13:40', ja:'✈️ FDA 山形12:25 → 名古屋（小牧）13:40'},
+   stay:{zh:'住 名古屋', ja:'名古屋泊'},
+   items:[
+    {t:'10:45', move:true, p:{zh:'退房，從山形站搭「山形空港 Shuttle」巴士到機場（約 35 分鐘，配合航班發車）。', ja:'チェックアウト、山形駅から「山形空港シャトル」で空港へ（約35分、便に合わせて運行）。'}},
+    {t:'12:25', move:true, p:{zh:'<strong>FDA</strong> 山形 → 名古屋，13:40 抵達<strong>縣營名古屋機場（小牧）</strong>，不是中部國際機場。', ja:'<strong>FDA</strong>で山形 → 名古屋、13:40に<strong>県営名古屋空港（小牧）</strong>着。中部国際空港ではありません。'}},
+    {t:'14:00', move:true, p:{zh:'機場巴士到名古屋站約 20 分鐘（往名古屋站的班次也會停「名古屋榮」），前往飯店 check-in。', ja:'空港バスで名古屋駅まで約20分（名古屋駅行きは「名古屋栄」にも停車）、ホテルへチェックイン。'}},
+    {t:'16:00', h:{zh:'大須商店街',ja:'大須商店街'}, tag:{zh:'逛街',ja:'食べ歩き'},
+     p:{zh:'地下鐵「上前津」或「大須觀音」站。邊走邊吃唐揚、台灣拉麵、雞翅；除夕傍晚有些店會提早收。',
+        ja:'地下鉄「上前津」「大須観音」駅。唐揚げや台湾ラーメン、手羽先を食べ歩き。大晦日は早じまいの店もあります。'}, meta:[], q:'大須商店街'},
+    {t:'23:30', h:{zh:'大須觀音 除夜之鐘',ja:'大須観音 除夜の鐘'}, tag:{zh:'跨年',ja:'年越し'},
+     p:{zh:'1/1 0:00 開始敲鐘，跨年後順便初詣。可以敲鐘的只有先到的 108 人，敲鐘券 12/18 上午 9 點開賣（志納 1,000 円），到 12/31 應該已經賣完，現場看敲鐘、參拜都沒問題。',
+        ja:'1/1 0:00から除夜の鐘、そのまま初詣。撞けるのは先着108名で、鐘つき券は12/18の9時から販売（志納金1,000円）。大晦日には売り切れの可能性が高いですが、見学と参拝はできます。'},
+     meta:[], q:'大須観音',
+     tip:{zh:'🚇 往年除夕名古屋地下鐵會通宵或延長運行，出發前在交通局官網確認。',ja:'🚇 例年大晦日は名古屋市営地下鉄が終夜運転・終電延長を実施。交通局サイトで確認を。'}}
+   ]
+ },
+ { id:'d0101', no:'1/1', nav:{zh:'1/1 犬山',ja:'1/1 犬山'},
+   title:{zh:'元旦｜犬山城・三光稻荷神社', ja:'元日｜犬山城・三光稲荷神社'},
+   route:{zh:'🚆 名鐵名古屋 → 犬山遊園／犬山，約 30 分鐘', ja:'🚆 名鉄名古屋 → 犬山遊園／犬山、約30分'},
+   stay:{zh:'住 名古屋', ja:'名古屋泊'},
+   items:[
+    {t:'09:30', move:true, p:{zh:'睡飽一點後出發，搭名鐵犬山線。三天連假犬山城很擠，越早到越好。', ja:'少しゆっくりしてから名鉄犬山線で出発。三が日の犬山城は混むので早めに。'}},
+    {t:'10:30', h:{zh:'犬山城',ja:'犬山城'}, tag:{zh:'國寶',ja:'国宝'},
+     p:{zh:'日本現存最古老的木造天守之一，最上層迴廊可以俯瞰木曾川。12/29–31 休城，元旦照常開。天守內樓梯很陡，可能要排隊。',
+        ja:'現存最古級の木造天守を持つ国宝の城。最上階の廻縁から木曽川を一望。12/29〜31は休城、元日は通常開城。天守内は急な階段で、入場待ちが出ることも。'},
+     meta:[{zh:'⏰ 9:00–17:00（最後入場 16:30）',ja:'⏰ 9:00–17:00（最終入場16:30）'}], q:'犬山城'},
+    {t:'12:30', h:{zh:'城下町午餐',ja:'城下町でランチ'}, tag:{zh:'午餐',ja:'昼食'},
+     p:{zh:'城下町邊走邊吃五平餅、糰子。元旦不少店休息或縮短營業。',
+        ja:'城下町で五平餅や団子を食べ歩き。元日は休業・時短の店も。'}, meta:[], q:'犬山城下町'},
+    {t:'13:30', h:{zh:'三光稻荷神社',ja:'三光稲荷神社'}, tag:{zh:'良緣・金運',ja:'縁結び・金運'},
+     p:{zh:'犬山城腳下，一排朱紅鳥居。境內姬龜神社的粉紅愛心繪馬求良緣（500 円）；在「錢洗池」用御神水洗錢，傳說會加倍回來。',
+        ja:'犬山城のふもと、朱色の鳥居が連なる神社。境内の姫亀神社のピンクのハート絵馬（500円）で縁結び祈願。「銭洗池」でお金を洗うと何倍にもなって返ってくるとか。'},
+     meta:[], q:'三光稲荷神社 犬山'}
+   ]
+ },
+ { id:'d0102', no:'1/2', nav:{zh:'1/2 熱田・名古屋城',ja:'1/2 熱田・名古屋城'},
+   title:{zh:'熱田神宮初詣・名古屋城', ja:'熱田神宮で初詣・名古屋城'},
+   route:{zh:'🚇 市區地下鐵＋名鐵', ja:'🚇 市内の地下鉄＋名鉄'},
+   stay:{zh:'住 名古屋', ja:'名古屋泊'},
+   items:[
+    {t:'09:00', h:{zh:'熱田神宮',ja:'熱田神宮'}, tag:{zh:'初詣',ja:'初詣'},
+     p:{zh:'供奉三神器之一草薙劍，正月三天是全國人潮最多的神社之一，早上去比較好走。名鐵「神宮前」或地下鐵「神宮西」站。參拜完吃「宮きしめん」。',
+        ja:'三種の神器のひとつ・草薙神剣を祀る神宮。三が日は全国有数の人出なので、朝のうちに。名鉄「神宮前」または地下鉄「神宮西」駅。参拝後は「宮きしめん」を。'},
+     meta:[{zh:'💴 免費參拜',ja:'💴 参拝無料'}], q:'熱田神宮'},
+    {t:'12:30', h:{zh:'名古屋城',ja:'名古屋城'}, tag:{zh:'必去',ja:'必見'},
+     p:{zh:'12/29–1/1 休城，1/2 新年第一天開城。本丸御殿金碧輝煌的障壁畫必看；城外「金鯱橫丁」吃味噌豬排、雞翅。',
+        ja:'12/29〜1/1は休城で、1/2が年明け最初の開城日。本丸御殿の豪華な障壁画は必見。城外の「金シャチ横丁」で味噌カツや手羽先を。'},
+     meta:[{zh:'⏰ 9:00–16:30（本丸御殿最後入場 16:00）',ja:'⏰ 9:00–16:30（本丸御殿は16:00まで）'}], q:'名古屋城'}
+   ]
+ },
+ { id:'d0103', no:'1/3', nav:{zh:'1/3 白川鄉',ja:'1/3 白川郷'},
+   title:{zh:'一日團｜白川鄉合掌村・飛驒高山', ja:'日帰りツアー｜白川郷・飛騨高山'},
+   route:{zh:'🚌 名古屋出發的一日巴士團', ja:'🚌 名古屋発の日帰りバスツアー'},
+   stay:{zh:'住 名古屋', ja:'名古屋泊'},
+   items:[
+    {t:'08:00', move:true, p:{zh:'依一日團集合時間到名古屋站集合（多半在 7:30–8:30）。', ja:'ツアーの集合時間に名古屋駅へ（多くは7:30〜8:30）。'}},
+    {t:'11:00', h:{zh:'白川鄉合掌村',ja:'白川郷合掌造り集落'}, tag:{zh:'世界遺產',ja:'世界遺産'},
+     p:{zh:'積雪中的茅草屋頂聚落。先上「城山天守閣展望台」看全景，再下來逛和田家。雪很深，一定要穿雪靴。',
+        ja:'雪に包まれた合掌造りの集落。まず「城山天守閣展望台」から全景を眺めて、和田家などを見学。積雪が深いのでスノーブーツ必須。'},
+     meta:[], q:'白川郷'},
+    {t:'14:30', h:{zh:'飛驒高山老街',ja:'飛騨高山 古い町並'}, tag:{zh:'散步',ja:'散策'},
+     p:{zh:'三町老街的格子窗町屋、酒藏，吃飛驒牛握壽司、御手洗糰子。新年期間部分店家休息。',
+        ja:'さんまちの格子戸の町家と酒蔵めぐり。飛騨牛にぎりやみたらし団子を。正月期間は休む店もあります。'},
+     meta:[], q:'飛騨高山 古い町並'},
+    {t:'19:30', move:true, p:{zh:'回到名古屋（雪況可能延誤）。', ja:'名古屋着（雪で遅れることも）。'}}
+   ]
+ },
+ { id:'d0104', no:'1/4', nav:{zh:'1/4 回程',ja:'1/4 帰国'},
+   title:{zh:'名古屋 → 台北', ja:'名古屋 → 台北'},
+   route:{zh:'✈️ 19:40–22:15 名古屋 → 台北', ja:'✈️ 19:40–22:15 名古屋 → 台北'},
+   stay:null,
+   items:[
+    {t:'10:00', move:true, p:{zh:'退房，行李寄放飯店或名古屋站置物櫃。', ja:'チェックアウト。荷物はホテルか名古屋駅のコインロッカーへ。'}},
+    {t:'11:00', h:{zh:'名古屋站周邊',ja:'名古屋駅周辺'}, tag:{zh:'自由',ja:'自由時間'},
+     p:{zh:'最後採買伴手禮（青柳ういろう、蝦仙貝），午餐吃鰻魚飯三吃（ひつまぶし）。',
+        ja:'最後のお土産選び（ういろう、えびせんべい）。昼食はひつまぶしで。'}, meta:[], q:'名古屋駅 ひつまぶし'},
+    {t:'16:30', move:true, p:{zh:'名鐵名古屋站搭 <strong>μSKY</strong> 到中部國際機場，約 30 分鐘。17:30 前到機場報到（請再確認機票上的機場）。', ja:'名鉄名古屋駅から<strong>ミュースカイ</strong>で中部国際空港へ約30分。17:30までに空港へ（航空券の空港名を再確認）。'}},
+    {t:'19:40', move:true, p:{zh:'✈️ 名古屋 → 台北，22:15 抵達。', ja:'✈️ 名古屋 → 台北、22:15着。'}}
+   ]
+ }
+];
+
+const NOTES = [
+  {key:true, h:{zh:'🎫 先訂好的東西',ja:'🎫 事前予約リスト'},
+   ul:{zh:['芝公園聖誕市集門票（KKday）','迪士尼門票（官網／App）','12/25 新宿 → 富士山 高速巴士','河口湖租車（12/25–12/26）','12/27 東北新幹線指定席','12/31 FDA 山形 → 名古屋','1/3 白川鄉・高山一日團'],
+       ja:['芝公園クリスマスマーケット入場券（KKday）','ディズニーチケット（公式サイト／アプリ）','12/25 新宿 → 富士山 高速バス','河口湖レンタカー（12/25〜26）','12/27 東北新幹線 指定席','12/31 FDA 山形 → 名古屋','1/3 白川郷・高山 日帰りツアー']}},
+  {h:{zh:'🚄 車票要不要買周遊券？',ja:'🚄 パスは必要？'},
+   p:{zh:'這趟 JR 長程只有東京 → 仙台、仙台 → 山形、山形 ↔ 大石田，單買比 JR 東日本周遊券便宜。用「えきねっと」預約新幹線，有時有折扣票。',
+      ja:'JRの長距離移動は東京 → 仙台、仙台 → 山形、山形 ↔ 大石田だけなので、JR東日本のパスより普通に買うほうが安く済みます。新幹線は「えきねっと」で予約を。割引きっぷがある場合も。'}},
+  {h:{zh:'✈️ 名古屋有兩個機場',ja:'✈️ 名古屋の空港は2つ'},
+   p:{zh:'12/31 的 FDA 降落在<strong>小牧（縣營名古屋機場）</strong>，搭巴士 20 分鐘到名古屋站；1/4 回台北的國際線通常在<strong>中部國際機場</strong>，搭名鐵約 30 分鐘。',
+      ja:'12/31のFDAは<strong>小牧（県営名古屋空港）</strong>着で、名古屋駅までバス約20分。1/4の台北行き国際線は通常<strong>中部国際空港</strong>で、名鉄で約30分。'}},
+  {h:{zh:'📅 年末年始營業',ja:'📅 年末年始の営業'},
+   ul:{zh:['名古屋城：12/29–1/1 休，1/2 開','犬山城：12/29–31 休，1/1 開','仙台朝市：週日、假日、年初休','らくら ひとしな拉麵：只開週末（部分資料寫週四到週日）','銀山溫泉末班 18:21 巴士：12/31–1/3 停駛'],
+       ja:['名古屋城：12/29〜1/1休、1/2から開城','犬山城：12/29〜31休、1/1開城','仙台朝市：日曜・祝日・年始は休み','らくら ひとしな：週末のみ営業（木〜日とする情報も）','銀山温泉の最終バス18:21発：12/31〜1/3運休']}},
+  {h:{zh:'❄️ 東北雪地裝備',ja:'❄️ 東北の雪対策'},
+   p:{zh:'銀山溫泉、藏王、白川鄉都在積雪區：防滑雪靴或鞋底冰爪、手套、毛帽。藏王山頂可能零下 10 度以下，暖暖包多帶幾個。',
+      ja:'銀山温泉・蔵王・白川郷は積雪地帯。滑りにくいスノーブーツか靴用スパイク、手袋、ニット帽を。蔵王の山頂は氷点下10℃以下になることも。カイロは多めに。'}},
+  {h:{zh:'💳 付款',ja:'💳 支払い'},
+   p:{zh:'Suica 等 IC 卡在東京、仙台、名古屋的地鐵與巴士都能用。例外：銀山溫泉的はながさ巴士只收現金（1,000 円紙鈔可以找）。',
+      ja:'Suicaなどの交通系ICカードは東京・仙台・名古屋の電車やバスで使えます。例外として銀山温泉のはながさバスは現金のみ（1,000円札は両替可）。'}}
+];
+
+function mapSVG(){
+  const t = {
+    jsea:{zh:'日本海',ja:'日本海'}, pac:{zh:'太平洋',ja:'太平洋'},
+    tokyo:{zh:'東京 🛏',ja:'東京 🛏'}, yoko:{zh:'橫濱',ja:'横浜'}, fuji:{zh:'河口湖 🛏',ja:'河口湖 🛏'},
+    sendai:{zh:'仙台 🛏',ja:'仙台 🛏'}, yama:{zh:'山形 🛏',ja:'山形 🛏'}, ginzan:{zh:'銀山溫泉',ja:'銀山温泉'}, zao:{zh:'藏王',ja:'蔵王'},
+    nagoya:{zh:'名古屋 🛏',ja:'名古屋 🛏'}, inu:{zh:'犬山',ja:'犬山'}, shira:{zh:'白川鄉・高山',ja:'白川郷・高山'},
+    tpe:{zh:'↙ 台北',ja:'↙ 台北'},
+    rail:{zh:'━ 鐵路・巴士・自駕',ja:'━ 鉄道・バス・車'}, air:{zh:'┅ 飛機',ja:'┅ 飛行機'}
+  };
+  return `<svg viewBox="0 0 640 420" role="img" aria-label="${L(UI.mapCap)}">
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--gold)"/></marker>
+  <marker id="ar2" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="var(--indigo)"/></marker></defs>
+  <path d="M0,0 H400 C380,40 360,80 330,120 C290,170 220,190 150,200 C90,210 40,220 0,230 Z" fill="var(--sea)" opacity=".12"/>
+  <path d="M640,40 C600,120 580,200 560,260 C540,320 520,360 480,390 C440,410 360,420 300,420 H640 Z" fill="var(--sea)" opacity=".12"/>
+  <text x="40" y="60" font-size="16" fill="var(--sea)">${L(t.jsea)}</text>
+  <text x="560" y="400" font-size="16" fill="var(--sea)">${L(t.pac)}</text>
+  <path d="M150,405 C230,390 320,370 460,338" fill="none" stroke="var(--indigo)" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#ar2)"/>
+  <path d="M462,334 C440,330 420,332 404,336" fill="none" stroke="var(--gold)" stroke-width="3" marker-end="url(#ar)"/>
+  <path d="M398,326 C430,250 470,180 510,128" fill="none" stroke="var(--gold)" stroke-width="3" marker-end="url(#ar)"/>
+  <path d="M510,116 C490,110 472,110 458,114" fill="none" stroke="var(--gold)" stroke-width="3" marker-end="url(#ar)"/>
+  <path d="M448,108 C446,90 448,78 452,68" fill="none" stroke="var(--gold)" stroke-width="2.5" marker-end="url(#ar)"/>
+  <path d="M452,128 C458,138 462,146 466,152" fill="none" stroke="var(--gold)" stroke-width="2.5" marker-end="url(#ar)"/>
+  <path d="M442,126 C380,200 280,280 210,332" fill="none" stroke="var(--indigo)" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#ar2)"/>
+  <path d="M196,342 C140,360 90,380 40,402" fill="none" stroke="var(--indigo)" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#ar2)"/>
+  <path d="M200,336 C205,322 210,312 214,306" fill="none" stroke="var(--gold)" stroke-width="2.5"/>
+  <path d="M196,334 C185,300 178,270 178,240" fill="none" stroke="var(--muted)" stroke-width="2" stroke-dasharray="2 5"/>
+  <g font-size="17" fill="var(--ink)">
+    <circle cx="468" cy="336" r="8" fill="var(--gold)"/><text x="480" y="332" font-weight="700">${L(t.tokyo)}</text>
+    <circle cx="458" cy="362" r="5" fill="var(--gold)"/><text x="470" y="370" font-size="15">${L(t.yoko)}</text>
+    <circle cx="398" cy="334" r="7" fill="var(--gold)"/><text x="330" y="364">${L(t.fuji)}</text>
+    <circle cx="516" cy="120" r="7" fill="var(--gold)"/><text x="528" y="126">${L(t.sendai)}</text>
+    <circle cx="450" cy="120" r="7" fill="var(--gold)"/><text x="360" y="126">${L(t.yama)}</text>
+    <circle cx="454" cy="60" r="6" fill="var(--gold)"/><text x="466" y="62" font-size="15">${L(t.ginzan)}</text>
+    <circle cx="470" cy="158" r="6" fill="var(--gold)"/><text x="482" y="166" font-size="15">${L(t.zao)}</text>
+    <circle cx="200" cy="340" r="8" fill="var(--indigo)"/><text x="214" y="364" font-weight="700">${L(t.nagoya)}</text>
+    <circle cx="216" cy="302" r="5" fill="var(--indigo)"/><text x="226" y="300" font-size="15">${L(t.inu)}</text>
+    <circle cx="178" cy="232" r="6" fill="none" stroke="var(--muted)" stroke-width="2"/><text x="80" y="226" font-size="15" fill="var(--muted)">${L(t.shira)}</text>
+    <text x="20" y="414" font-size="14" fill="var(--muted)">${L(t.tpe)}</text>
+  </g>
+  <g font-size="14" fill="var(--muted)"><text x="20" y="270">${L(t.rail)}</text><text x="20" y="290">${L(t.air)}</text></g>
+  </svg>`;
+}
+
+function stopHTML(it){
+  if (it.move) return `<li class="move"><time>${it.t}</time><div class="stop">🚆 ${L(it.p)}</div></li>`;
+  const meta = (it.meta||[]).map(m=>`<span>${L(m)}</span>`).join('');
+  return `<li><time>${it.t}</time><div class="stop">
+    <h3>${L(it.h)} <span class="tag${it.opt?' opt':''}">${L(it.tag)}</span></h3>
+    <p>${L(it.p)}</p>
+    <div class="meta">${meta}<a href="${gmap(it.q)}" target="_blank" rel="noopener">${L(UI.mapLink)}</a></div>
+    ${it.tip?`<div class="tip">${L(it.tip)}</div>`:''}
+  </div></li>`;
+}
+
+function dayHTML(d){
+  return `<section id="${d.id}">
+    <div class="day-head"><span class="day-no">${d.no}</span><h2>${L(d.title)}</h2></div>
+    <p class="drive">${L(d.route)}${d.stay?`<span class="stay">${L(d.stay)}</span>`:''}</p>
+    <ol class="tl">${d.items.map(stopHTML).join('')}</ol>
+    ${d.tip?`<div class="tip daytip">${L(d.tip)}</div>`:''}
+  </section>`;
+}
+
+function noteHTML(n){
+  return `<div class="note${n.key?' key':''}"><h3>${L(n.h)}</h3>
+    ${n.p?`<p>${L(n.p)}</p>`:''}
+    ${n.ul?`<ul>${L(n.ul).map(x=>`<li>${x}</li>`).join('')}</ul>`:''}</div>`;
+}
+
+function render(){
+  document.documentElement.lang = lang==='ja' ? 'ja' : 'zh-Hant-TW';
+  document.title = L(UI.title);
+  document.querySelector('meta[name=description]').content = L(UI.desc);
+  const h1 = L(UI.h1);
+  document.getElementById('app').innerHTML = `
+  <header class="hero"><div class="wrap">
+    <div class="eyebrow">${UI.eyebrow}</div>
+    <h1>${h1[0]}<span>${h1[1]}</span></h1>
+    <p class="lede">${L(UI.lede)}</p>
+    <div class="stats">${UI.stats.map(s=>`<span class="stat">${L(s)}</span>`).join('')}</div>
+    <figure class="map">${mapSVG()}<figcaption>${L(UI.mapCap)}</figcaption></figure>
+  </div></header>
+  <nav class="days" aria-label="Itinerary"><div class="wrap">
+    ${DAYS.map(d=>`<a href="#${d.id}">${L(d.nav)}</a>`).join('')}<a href="#notes">${L(UI.notesNav)}</a>
+  </div></nav>
+  <main class="wrap">
+    ${DAYS.map(dayHTML).join('')}
+    <section id="notes"><div class="sec-title">${L(UI.notesEyebrow)}</div><h2>${L(UI.notesTitle)}</h2>
+      <div class="grid">${NOTES.map(noteHTML).join('')}</div></section>
+  </main>
+  <footer><div class="wrap">${L(UI.footer)}</div></footer>`;
+  document.querySelectorAll('.lang button').forEach(b=>b.setAttribute('aria-pressed', b.dataset.lang===lang));
+}
+
+let lang = 'zh';
+try {
+  const q = new URLSearchParams(location.search).get('lang');
+  const saved = localStorage.getItem('lang');
+  lang = (q==='ja'||q==='zh') ? q : (saved==='ja'?'ja':'zh');
+} catch(e){}
+document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>{
+  lang = b.dataset.lang;
+  try { localStorage.setItem('lang', lang); } catch(e){}
+  try { const u = new URL(location.href); u.searchParams.set('lang', lang); history.replaceState(null,'',u); } catch(e){}
+  render();
+}));
+render();
+</script>
+</body>
+</html>
